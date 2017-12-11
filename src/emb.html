@@ -1,0 +1,101 @@
+
+<HTML> 
+  <HEAD> 
+    <TITLE>Test</TITLE> 
+    <link rel="stylesheet" type="text/css" href="http://epigenomegateway.wustl.edu/browser/css/style.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://epigenomegateway.wustl.edu/browser/js/base.js"></script>
+    <script type="text/javascript" src="http://epigenomegateway.wustl.edu/browser/js/jscolor.min.js"></script>
+    <script type="text/javascript" src="http://epigenomegateway.wustl.edu/browser/js/dataProvider.js"></script>
+    <script type="text/javascript" src="http://epigenomegateway.wustl.edu/browser/js/personality.js"></script>
+    <script type="text/javascript" src="http://epigenomegateway.wustl.edu/browser/js/embed.js"></script>
+  </head>
+ 
+<body style="margin:20px">
+
+
+<div style="margin:15px;border:solid 1px white;display:inline-block;" id=xxx></div>
+
+<script type="text/javascript">
+embed_washugb({
+	host:"http://epigenomegateway.wustl.edu",
+	container:document.getElementById("xxx"),
+	genome:"mm10",
+
+
+	showContent:[
+	        {type:"native_track",
+                    list:[{name:"refGene",mode:"full"},
+        	    ],
+                },
+    {
+        "show_terms": {
+            "private": [
+                "Assay", 
+                "Sample", 
+                "Lab"
+            ]
+        }, 
+        "type": "metadata", 
+        "vocabulary_set": {
+            "private": {
+                "terms": {
+                    "11": [
+                        "liver"
+                    ], 
+                    
+                    "21": [
+                        "ATAC-seq"
+                    ], 
+                    
+                    "31": [
+                        "ENCODE"
+                    ]
+                }, 
+                "vocabulary": {
+                    "Assay": [
+                        "21"
+                    ], 
+                    "Lab": [
+                        "31"
+                    ], 
+                    "Sample": [
+                        "11"
+                    ]
+                }
+            }
+        }
+    }, 
+    {
+        "colorpositive": "#c80000", 
+        "height": 20, 
+        "metadata": {
+            "private": [
+                "21", 
+                "11", 
+                "31"
+            ]
+        }, 
+        "mode": "show",
+        "name": "encode liver ATAC", 
+        "type": "bigWig", 
+        "url": "http://brc.wustl.edu/SPACE/zhangbo/ZB/ATAC-seq/Normalized_Track/ENCODE/step3.2_Normalized_per_10M_mm10_liver_embryo_d11.5_PE_bio1_ENCLB441LCB_1.bigWig"
+    }, 
+    
+
+    	],
+	noDeleteButton:true,
+	noDefaultTrack:true,
+	leftSpaceWidth:120,
+	/*
+	panelWidth:500,
+	hideTopRuler:true,
+	hideChromNavigator:true,
+	hideTrackName:true,
+	*/
+});
+</script>
+
+
+</body>
+</html>
